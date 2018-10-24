@@ -1,0 +1,3 @@
+
+sudo yum install centos-release-scl-rh
+sudo yum --enablerepo=centos-sclo-rh-testing install devtoolset-3-libtsan-devel
