@@ -1,0 +1,17 @@
+{ 
+    "compilerOptions": {
+        "target": "es2015",
+        "outDir": "dist",
+        "module": "commonjs",
+        "sourceMap": true,
+        "allowJs": true,
+        "skipLibCheck": true,
+        "experimentalDecorators": true
+    },
+    "files": [
+        "index.ts"
+    ],
+    "include": [
+        "**/test/*.test.*"
+    ]
+}

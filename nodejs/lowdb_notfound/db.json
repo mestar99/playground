@@ -1,0 +1,9 @@
+{
+  "workerErrors": [],
+  "workers": [
+    {
+      "name": "worker1",
+      "logExpired": false
+    }
+  ]
+}
