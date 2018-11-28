@@ -6,7 +6,7 @@
 # /opt/gcc-4.9.2/bin/g++ -gdwarf-2 -g3 -O0 -fno-builtin shared.cpp -fPIC -shared -Wl,-soname,libshared.so.1 -o libshared.so.1.0
 
 .PHONY: all
-all: test_4.9.2 test_5.3.1 test_6.3.1 test_7.3.1 test_native_4.9.2 test_native_5.3.0 test_hack_5.3.0 libshared.so.1 libshared.so.2 libshared.so.3 libshared.so.4 libshared.so.5
+all: test_4.9.2 test_5.3.1 test_6.3.1 test_7.3.1 test_native_4.9.2 test_native_5.3.0 test_hack_5.3.0 test_native_6.3.0 libshared.so.1 libshared.so.2 libshared.so.3 libshared.so.4 libshared.so.5 libshared.so.6
 
 test_4.9.2: test.cpp
 	scl enable devtoolset-3 ./build_script.sh
@@ -30,6 +30,9 @@ test_native_4.9.2: test.cpp
 test_native_5.3.0: test.cpp
 	/opt/base-gcc-5.3.0/bin/g++ -std=c++11 -gdwarf-2 -g3 -O0 -fno-builtin test.cpp -ldl -o test_native_5.3.0
 
+test_native_6.3.0: test.cpp
+	/opt/base-gcc-6.3.0/bin/g++ -std=c++11 -gdwarf-2 -g3 -O0 -fno-builtin test.cpp -ldl -o test_native_6.3.0
+
 test_hack_5.3.0: test.cpp
 	/opt/gcc-5.3.0/bin/g++ -std=c++11 -gdwarf-2 -g3 -O0 -fno-builtin test.cpp -ldl -o test_hack_5.3.0
 
@@ -52,3 +55,7 @@ libshared.so.4: shared.cpp
 libshared.so.5: shared.cpp
 	/opt/base-gcc-5.3.0/bin/g++ -std=c++11 -gdwarf-2 -g3 -O0 -fno-builtin -D_GLIBCXX_USE_CXX11_ABI=0 shared.cpp -fPIC -shared -Wl,-soname,libshared.so.5 -o libshared.so.5.0
 	ln -sfT libshared.so.5.0 libshared.so.5
+
+libshared.so.6: shared.cpp
+	/opt/base-gcc-6.3.0/bin/g++ -std=c++11 -gdwarf-2 -g3 -O0 -fno-builtin shared.cpp -fPIC -shared -Wl,-soname,libshared.so.6 -o libshared.so.6.0
+	ln -sfT libshared.so.6.0 libshared.so.6
