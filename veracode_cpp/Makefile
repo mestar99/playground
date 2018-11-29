@@ -12,16 +12,16 @@ test_4.8.5: test.cpp
 	./build_script.sh 4.8.5
 
 test_4.9.2: test.cpp
-	scl enable devtoolset-3 ./build_script.sh 4.9.2
+	scl enable devtoolset-3 "./build_script.sh 4.9.2"
 
 test_5.3.1: test.cpp
-	scl enable devtoolset-4 ./build_script.sh 5.3.1
+	scl enable devtoolset-4 "./build_script.sh 5.3.1"
 
 test_6.3.1: test.cpp
-	scl enable devtoolset-6 ./build_script.sh 6.3.1
+	scl enable devtoolset-6 "./build_script.sh 6.3.1"
 
 test_7.3.1: test.cpp
-	scl enable devtoolset-7 ./build_script.sh 7.3.1
+	scl enable devtoolset-7 "./build_script.sh 7.3.1"
 
 test_native_4.9.2: test.cpp
 	/opt/gcc-4.9.2/bin/g++ -std=c++11 -gdwarf-2 -g3 -O0 -fno-builtin test.cpp -ldl -o test_native_4.9.2
