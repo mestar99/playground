@@ -1,0 +1,11 @@
+
+gsutil cp gs://ak-wg-blade/play/zz/good.volcan .
+
+hexdump -Cv -s 169056 -n 16 good.volcan
+
+curl -s -X GET -H "Range: bytes=169056-169071" \
+  -H "Authorization: Bearer $(gcloud auth print-access-token)" \
+  https://storage.googleapis.com/storage/v1/b/ak-wg-blade/o/play%2fzz%2fgood.volcan?alt=media \
+  --output part
+
+hexdump -Cv part
