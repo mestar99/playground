@@ -1,0 +1,8 @@
+
+Run Server with openssl
+
+openssl s_server -cert cert.pem -key key.pem
+
+Run Client with openssl
+
+openssl s_client
