@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "lodash": "^4.17.13",
+    "lodash": "^4.17.21",
     "lowdb": "^1.0.0"
   }
 }
